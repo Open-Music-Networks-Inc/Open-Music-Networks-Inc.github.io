@@ -1080,25 +1080,34 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
       
       // Note frequencies (Hz)
       const notes = {
-        'G3': 196.00, 'A3': 220.00, 'B3': 246.94,
+        'F3': 174.61, 'G3': 196.00, 'A3': 220.00, 'B3': 246.94,
         'C4': 261.63, 'D4': 293.66, 'E4': 329.63, 'F4': 349.23, 'G4': 392.00, 'A4': 440.00, 'B4': 493.88,
-        'C5': 523.25, 'E5': 659.26, 'G5': 783.99
+        'C5': 523.25, 'E5': 659.26
       };
       
-      // Chord progression with voicings
+      // Standard notation durations at 120 BPM (quarter = 0.5s)
+      const durations = {
+        'whole': 2.0,
+        'dotted-half': 1.5,
+        'half': 1.0,
+        'dotted-quarter': 0.75,
+        'quarter': 0.5,
+        'eighth': 0.25
+      };
+      
+      // Chord progression matching Rotem Sivan voicings
       const chords = [
-        { notes: ['C4', 'E4', 'G4'], name: 'C' },           // C closed
-        { notes: ['C4', 'G4', 'E5'], name: 'C' },           // C open
-        { notes: ['B3', 'D4', 'G4'], name: 'G/B' },         // G/B
-        { notes: ['A3', 'C4', 'E4'], name: 'Am' },          // Am
-        { notes: ['G3', 'B3', 'E4'], name: 'Em/G' },        // Em/G
-        { notes: ['F4', 'A4', 'C5'], name: 'F' },           // F
-        { notes: ['G3', 'B3', 'D4'], name: 'G' },           // G
-        { notes: ['B3', 'D4', 'G4'], name: 'G/B' },         // G/B
-        { notes: ['D4', 'G4', 'B4'], name: 'G/D' }          // G/D
+        { notes: ['C4', 'E4', 'G4', 'C5'], duration: 'whole' },    // C closed position
+        { notes: ['C4', 'G4', 'E5'], duration: 'whole' },          // C open triad
+        { notes: ['B3', 'D4', 'G4'], duration: 'half' },           // G/B
+        { notes: ['A3', 'C4', 'E4'], duration: 'half' },           // Am
+        { notes: ['G3', 'B3', 'E4'], duration: 'half' },           // Em/G
+        { notes: ['F3', 'A3', 'C4'], duration: 'dotted-half' },    // F
+        { notes: ['G3', 'B3', 'D4'], duration: 'quarter' },        // G (first shape)
+        { notes: ['B3', 'D4', 'G4'], duration: 'quarter' },        // G/B (inversion)
+        { notes: ['D4', 'G4', 'B4'], duration: 'whole' }           // G/D (second inversion, let ring)
       ];
       
-      const chordDuration = 0.5;  // seconds per chord
       const attackTime = 0.02;
       const decayTime = 0.1;
       const sustainLevel = 0.3;
@@ -1106,12 +1115,16 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
       
       // Create master gain for overall volume
       const masterGain = audioCtx.createGain();
-      masterGain.gain.value = 0.15;
+      masterGain.gain.value = 0.12;
       masterGain.connect(audioCtx.destination);
       
-      // Play each chord
-      chords.forEach((chord, chordIndex) => {
-        const startTime = audioCtx.currentTime + (chordIndex * chordDuration);
+      // Calculate cumulative start times
+      let currentTime = audioCtx.currentTime;
+      let totalDuration = 0;
+      
+      chords.forEach((chord) => {
+        const chordDuration = durations[chord.duration];
+        const startTime = currentTime;
         
         chord.notes.forEach((noteName) => {
           const freq = notes[noteName];
@@ -1135,6 +1148,9 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
           osc.start(startTime);
           osc.stop(startTime + chordDuration + 0.1);
         });
+        
+        currentTime += chordDuration;
+        totalDuration += chordDuration;
       });
       
       // Show visual feedback
@@ -1144,7 +1160,7 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
       setTimeout(() => {
         konamiTriggered = false;
         konamiIndex = 0;
-      }, chords.length * chordDuration * 1000 + 1000);
+      }, totalDuration * 1000 + 1000);
     }
     
     function showEasterEggFeedback() {
