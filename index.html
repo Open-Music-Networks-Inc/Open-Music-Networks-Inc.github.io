@@ -561,6 +561,145 @@
     }
     
     /* ============================================
+       Mobile Interstitial
+       ============================================ */
+    .mobile-interstitial {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    
+    .mobile-interstitial.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .mobile-interstitial-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    
+    .mobile-interstitial-panel {
+      position: relative;
+      background: #ffffff;
+      width: 100%;
+      max-width: 480px;
+      padding: 2rem 1.5rem 1.75rem;
+      border-radius: 16px 16px 0 0;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    
+    .mobile-interstitial.active .mobile-interstitial-panel {
+      transform: translateY(0);
+    }
+    
+    .mobile-interstitial-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.25rem;
+    }
+    
+    .mobile-interstitial-panel h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      padding-right: 2rem;
+    }
+    
+    .mobile-interstitial-panel > p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+    
+    .interstitial-input-row {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .interstitial-input-row input {
+      flex: 1;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--stone-50);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    
+    .interstitial-input-row input:focus {
+      border-color: var(--accent);
+    }
+    
+    .interstitial-input-row button {
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      padding: 0.75rem 1.25rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+    
+    .interstitial-input-row button:hover {
+      background: var(--accent-hover);
+    }
+    
+    .interstitial-input-row button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    .interstitial-success {
+      display: none;
+      color: #16a34a;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+    
+    .interstitial-error {
+      display: none;
+      color: #dc2626;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+    
+    .interstitial-fine-print {
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+      margin-top: 1.25rem;
+    }
+    
+    /* Hide interstitial on desktop entirely */
+    @media (min-width: 769px) {
+      .mobile-interstitial {
+        display: none;
+      }
+    }
+    
+    /* ============================================
        Animations — Delight
        ============================================ */
     @keyframes fadeUp {
@@ -921,6 +1060,32 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
     </div>
   </footer>
   
+  <!-- Mobile Interstitial -->
+  <div class="mobile-interstitial" id="mobileInterstitial" aria-hidden="true" role="dialog" aria-labelledby="interstitialTitle">
+    <div class="mobile-interstitial-backdrop" data-close></div>
+    <div class="mobile-interstitial-panel">
+      <button class="mobile-interstitial-close" data-close aria-label="Close">&times;</button>
+      <h2 id="interstitialTitle">Openmusic is made for bigger screens.</h2>
+      <p>The DAW runs in your desktop or laptop browser. Send yourself a link and pick it up when you're at your computer.</p>
+      <form class="interstitial-form" id="interstitialForm">
+        <div class="interstitial-input-row">
+          <input
+            type="email"
+            id="interstitialEmail"
+            placeholder="Your email address"
+            required
+            autocomplete="email"
+            aria-label="Email address"
+          />
+          <button type="submit">Send link</button>
+        </div>
+        <p class="interstitial-success" id="interstitialSuccess">Done. Check your inbox.</p>
+        <p class="interstitial-error" id="interstitialError"></p>
+      </form>
+      <p class="interstitial-fine-print">We'll send one email with the link. Nothing else.</p>
+    </div>
+  </div>
+
   <script>
     // ============================================
     // Console greeting
@@ -980,6 +1145,96 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
           });
         }
       });
+    });
+    
+    // ============================================
+    // Mobile Interstitial
+    // Intercepts CTA clicks on viewports <= 768px
+    // ============================================
+    const MOBILE_BREAKPOINT = 768;
+    const interstitial = document.getElementById('mobileInterstitial');
+    const interstitialForm = document.getElementById('interstitialForm');
+    const interstitialEmail = document.getElementById('interstitialEmail');
+    const interstitialSuccess = document.getElementById('interstitialSuccess');
+    const interstitialError = document.getElementById('interstitialError');
+    
+    function isMobileViewport() {
+      return window.innerWidth <= MOBILE_BREAKPOINT;
+    }
+    
+    function openInterstitial() {
+      interstitial.classList.add('active');
+      interstitial.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      // Focus the email input after transition
+      setTimeout(() => interstitialEmail.focus(), 300);
+    }
+    
+    function closeInterstitial() {
+      interstitial.classList.remove('active');
+      interstitial.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    
+    function resetInterstitialForm() {
+      interstitialForm.reset();
+      interstitialSuccess.style.display = 'none';
+      interstitialError.style.display = 'none';
+      interstitialForm.querySelector('button').disabled = false;
+    }
+    
+    // Intercept CTA clicks on mobile
+    document.querySelectorAll('.nav-cta, .cta-primary, .cta-button-large').forEach(cta => {
+      cta.addEventListener('click', function(e) {
+        if (isMobileViewport()) {
+          e.preventDefault();
+          e.stopPropagation();
+          resetInterstitialForm();
+          openInterstitial();
+        }
+      });
+    });
+    
+    // Close handlers
+    interstitial.querySelectorAll('[data-close]').forEach(el => {
+      el.addEventListener('click', closeInterstitial);
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && interstitial.classList.contains('active')) {
+        closeInterstitial();
+      }
+    });
+    
+    // Form submission
+    // NOTE: Backend endpoint needed. Currently shows success state
+    // without sending. Wire to POST /api/v1/send-desktop-link when
+    // the endpoint is available.
+    interstitialForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = interstitialEmail.value.trim();
+      const submitBtn = this.querySelector('button');
+      
+      if (!email) return;
+      
+      submitBtn.disabled = true;
+      interstitialError.style.display = 'none';
+      
+      // TODO: Replace with actual API call
+      // fetch('/api/v1/send-desktop-link', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email })
+      // })
+      // .then(res => { ... })
+      // .catch(err => { ... });
+      
+      // Simulated success for now
+      setTimeout(() => {
+        interstitialSuccess.style.display = 'block';
+        interstitialEmail.style.display = 'none';
+        submitBtn.style.display = 'none';
+      }, 600);
     });
     
     // ============================================
