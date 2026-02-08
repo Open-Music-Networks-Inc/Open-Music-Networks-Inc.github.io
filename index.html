@@ -31,7 +31,7 @@
       --bg: #FAFAF8;
       --bg-surface: #ffffff;
       --text: #1c1917;
-      --text-secondary: #57534e;
+      --text-secondary: rgb(77, 75, 73);
       --text-muted: #78716c;
       --text-faint: #a8a29e;
       --border: #e7e5e4;
@@ -200,11 +200,6 @@
       margin-bottom: 0;
     }
     
-    .question {
-      font-style: italic;
-      color: var(--text);
-    }
-    
     /* ============================================
        Hero — Quiet Assurance
        ============================================ */
@@ -215,7 +210,7 @@
     }
     
     .hero h1 {
-      font-size: clamp(2.25rem, 7vw, 3.25rem);
+      font-size: clamp(2.305rem, 7vw, 3.305rem);
       margin-bottom: 1.75rem;
       letter-spacing: -0.025em;
     }
@@ -230,7 +225,7 @@
     }
     
     .hero-subhead {
-      font-size: 1.125rem;
+      font-size: 1.18rem;
       color: var(--text-secondary);
       max-width: 500px;
       margin-bottom: 2.25rem;
@@ -269,8 +264,8 @@
     
     .hero-tagline {
       margin-top: 1rem;
-      font-size: 0.73rem;
-      color: var(--text-muted);
+      font-size: 0.889rem;
+      color: rgb(108, 103, 101);
       letter-spacing: 0.01em;
     }
     
@@ -286,50 +281,24 @@
     }
     
     /* Reframe — the philosophical turn */
-    .reframe {
+    .content-section .reframe {
       margin-top: 2rem;
       padding-top: 1.75rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--stone-300);
       font-weight: 500;
       color: var(--text);
       font-size: 1.0625rem;
       letter-spacing: -0.01em;
     }
     
-    /* Quiet architectural signal — seeker-visible, coping-safe */
-    .reframe-note {
-      margin-top: 0.75rem;
-      font-weight: 500;
+    .content-section .section-note {
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--stone-300);
       color: var(--text);
+      font-weight: 500;
       font-size: 1.0625rem;
       letter-spacing: -0.01em;
-    }
-    
-    /* Feature list */
-    .feature-list {
-      margin: 1.25rem 0;
-      padding-left: 0;
-      list-style: none;
-    }
-    
-    .feature-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.625rem;
-      color: var(--text-secondary);
-    }
-    
-    .feature-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    
-    .section-note {
-      color: var(--text);
-      font-weight: 500;
     }
     
     /* ============================================
@@ -434,12 +403,6 @@
     
     .closure-section p {
       color: var(--text-secondary);
-    }
-    
-    .closure-section .section-note {
-      margin-top: 1.25rem;
-      font-style: italic;
-      letter-spacing: 0.01em;
     }
     
     /* ============================================
@@ -695,13 +658,11 @@
       transform: translateX(100%);
     }
     
-    /* Feature list items — subtle stagger on hover */
-    .feature-list li,
+    /* Fit list items — subtle stagger on hover */
     .fit-list li {
       transition: transform 0.2s ease;
     }
     
-    .feature-list li:hover,
     .fit-list li:hover {
       transform: translateX(4px);
     }
@@ -725,7 +686,11 @@
       }
       
       .hero h1 {
-        font-size: clamp(2rem, 10vw, 2.5rem);
+        font-size: clamp(2.0625rem, 10vw, 2.5625rem);
+      }
+      
+      .hero-tagline {
+        font-size: 1rem;
       }
       
       /* Protect headline rhythm on mobile */
@@ -752,7 +717,6 @@
       }
       
       /* Disable hover effects on touch */
-      .feature-list li:hover,
       .fit-list li:hover {
         transform: none;
       }
@@ -795,29 +759,26 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
         <span class="line-1">Leave. Come back.</span>
         <span class="line-2">It's all there.</span>
       </h1>
-      <p class="hero-subhead">Work on music together, across time.</p>
+      <p class="hero-subhead">Make music with people you can't be in the room with — and trust that the work holds.</p>
       <a href="#signup" class="cta-primary">
         Join the beta
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
       </a>
-      <p class="hero-tagline">Designed for real-life schedules.</p>
+      <p class="hero-tagline">For musicians who make time between everything else.</p>
     </div>
   </section>
   
   <!-- Problem -->
   <section class="content-section">
     <div class="container">
-      <h2 class="animate-header">Collaboration breaks down between sessions.</h2>
+      <h2 class="animate-header">Your tools assume you're in the space at the same time.</h2>
       <div class="animate-content">
-        <p>Most tools work well while everyone is present. They work much less well once time passes.</p>
-        <p>You export files. Upload them somewhere. Leave notes explaining what changed.</p>
-        <p>A few days later, someone opens the project.</p>
-        <p class="question">Which version is this? Why did this change? Is this finished, or still in progress?</p>
-        <p>Before you can make music, you have to reconstruct context.</p>
-        <p class="reframe">This is not a collaboration problem. It is a continuity problem.</p>
-        <p class="reframe-note">Most tools optimize for presence. Openmusic is built around return.</p>
+        <p>It's hard enough to remember the riff you laid down this morning.</p>
+        <p>The DAW works fine. The cloud folder works fine. The group chat works fine. But nobody is up to speed on the last session.</p>
+        <p>You've been solving a problem your tools created.</p>
+        <p class="reframe">This isn't a collaboration problem. It's a continuity problem.</p>
       </div>
     </div>
   </section>
@@ -825,16 +786,11 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
   <!-- Solution -->
   <section class="content-section">
     <div class="container">
-      <h2 class="animate-header">Openmusic is built for continuity.</h2>
+      <h2 class="animate-header">Openmusic remembers so you don't have to.</h2>
       <div class="animate-content">
-        <p>Openmusic is designed for collaboration that happens across days, schedules, and time zones.</p>
-        <p>It keeps:</p>
-        <ul class="feature-list">
-          <li>A single current version of the project</li>
-          <li>A clear record of what changed</li>
-          <li>The reasoning behind key decisions</li>
-        </ul>
-        <p class="section-note">So when you come back, you don't start from zero.</p>
+        <p>One project. One version. One truth about where things stand.</p>
+        <p>Every change is recorded — not just what happened, but why.</p>
+        <p class="section-note">You pick up where you left off. So does everyone else.</p>
       </div>
     </div>
   </section>
@@ -842,27 +798,10 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
   <!-- Benefit 1 -->
   <section class="content-section">
     <div class="container">
-      <h2 class="animate-header">You can see what changed — and why.</h2>
+      <h2 class="animate-header">Every change carries its own weight.</h2>
       <div class="animate-content">
-        <p>Changes aren't just saved. They're explained.</p>
-        <p>When something is added, removed, or altered, the reason stays attached to the work.</p>
-        <p>That means less guessing, fewer follow-up messages, and no need to re-explain decisions after time away.</p>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Benefit 2 -->
-  <section class="content-section">
-    <div class="container">
-      <h2 class="animate-header">Decisions are explicit.</h2>
-      <div class="animate-content">
-        <p>Instead of overwriting each other's work:</p>
-        <ul class="feature-list">
-          <li>Changes are proposed</li>
-          <li>Decisions are clear</li>
-          <li>What's pending and what's final is easy to tell</li>
-        </ul>
-        <p class="section-note">You always know where the project stands.</p>
+        <p>What shifted? Who made the call, and what were they thinking?</p>
+        <p>No more decoding. The explanation lives with the work. You always know where things stand.</p>
       </div>
     </div>
   </section>
@@ -872,8 +811,8 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
     <div class="container">
       <h2 class="animate-header">Runs in your browser.</h2>
       <div class="animate-content">
-        <p>No installs. No DAW compatibility issues. Nothing to set up before you can contribute.</p>
-        <p class="section-note">If you have a few minutes, you can move the work forward.</p>
+        <p>No installs. No compatibility issues. No "which version of which plugin."</p>
+        <p>Open a link. Hear the project. Make your contribution.</p>
       </div>
     </div>
   </section>
@@ -882,8 +821,8 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
   <section class="positioning-bridge">
     <div class="container">
       <p class="statement">
-        <span class="bridge-line-1">Real-time tools capture moments.</span>
-        <span class="bridge-line-2">Openmusic helps work survive between them.</span>
+        <span class="bridge-line-1">Real-time tools capture the session.</span>
+        <span class="bridge-line-2">Openmusic carries what matters between sessions.</span>
       </p>
     </div>
   </section>
@@ -891,18 +830,18 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
   <!-- Fit Section -->
   <section class="fit-section">
     <div class="container">
-      <h2 class="animate-header">Built for real life collaboration.</h2>
+      <h2 class="animate-header">Built for how collaboration actually happens.</h2>
       <div class="animate-content">
-        <p>Openmusic works best for musicians who:</p>
+        <p>Openmusic is for musicians who:</p>
         <ul class="fit-list">
-          <li>Collaborate remotely or asynchronously</li>
-          <li>Return to projects after time away</li>
-          <li>Don't work in daily studio sessions</li>
+          <li>Work with people in other cities, other time zones, other lives</li>
+          <li>Come back to projects after days or weeks away</li>
+          <li>Don't have the luxury of daily sessions or dedicated studio time</li>
         </ul>
-        <p class="fit-exclusion">It's not designed for teams with uninterrupted schedules or full-time support around every project.</p>
+        <p class="fit-exclusion">Projects start under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons</a>. Work together freely now; sort out commercial terms later, if the work proves worth it.</p>
         <div class="fit-closer">
-          <p>If collaboration happens in the gaps, Openmusic is built for you.</p>
-          <p>If you're always in the room together, you probably don't need it.</p>
+          <p>If you collaborate in the gaps — between jobs, between obligations, between everything else — this is built for you.</p>
+          <p>If you're in the same room every day, you probably don't need it.</p>
         </div>
       </div>
     </div>
@@ -913,7 +852,9 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
     <div class="container">
       <h2 class="animate-header">See it through.</h2>
       <div class="animate-content">
-        <p>When you're ready, Openmusic carries your project — from collaboration to release — without losing context along the way.</p>
+        <p>Most collaboration tools stop at the session. The work piles up. Projects stall.</p>
+        <p>Openmusic includes a path to release.</p>
+        <p>When you're ready, your project moves from collaboration to audience. No starting over. No exporting and re-uploading somewhere else.</p>
       </div>
     </div>
   </section>
@@ -921,8 +862,8 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
   <!-- Final CTA -->
   <section class="final-cta" id="signup">
     <div class="container">
-      <h2 class="animate-header">Pick up where you left off.</h2>
-      <p class="subhead animate-content">Openmusic is in beta. Join now and help shape how asynchronous music collaboration works.</p>
+      <h2 class="animate-header">Start something that lasts.</h2>
+      <p class="subhead animate-content">Openmusic is in beta.</p>
       <a href="#" class="cta-button-large animate-content">
         Play on
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
@@ -980,7 +921,6 @@ UklGRlwIAQBXRUJQVlA4WAoAAAAgAAAAzwcAZAQASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZ
           </ul>
         </div>
       </div>
-      <p class="footer-note">Projects start under a non-commercial <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons license</a>, so collaborators can work freely without negotiating terms upfront. Commercial options come into play as projects move toward release.</p>
     </div>
   </footer>
   
