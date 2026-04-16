@@ -18,10 +18,6 @@
   <!-- Mona Sans -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/mona-sans@5.0.0/index.min.css">
 
-  <!-- KickoffLabs AnyForm -->
-  <script src="https://b.kickoffpages.com/2.1.0/kol.js" id="koljs" data-campaign-id="170980" async></script>
-
-
 
   <style>
     /* ============================================
@@ -796,25 +792,6 @@
         white-space: normal;
       }
     }
-
-    /* ============================================
-       KickoffLabs Popup Suppression
-       Hides returning-visitor referral widget.
-       Does NOT target kol-embed (form wrapper).
-       ============================================ */
-    [class*="kol-popup"],
-    [class*="kol-widget"],
-    [class*="kol-overlay"],
-    [class*="kol-modal"],
-    [class*="kol-bar"],
-    [class*="kol-slide"],
-    [class*="kol-float"] {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      z-index: -1 !important;
-    }
   </style>
 </head>
 <body>
@@ -1070,6 +1047,52 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
     
     
     // ============================================
+    // Signup Form -- KickoffLabs API (no kol.js)
+    // ============================================
+    const signupForm = document.querySelector('.signup-form');
+    if (signupForm) {
+      signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = signupForm.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        const firstName = signupForm.querySelector('input[name="first_name"]').value.trim();
+        const email = signupForm.querySelector('input[name="email"]').value.trim();
+        
+        if (!firstName || !email) return;
+        
+        btn.textContent = 'Joining...';
+        btn.disabled = true;
+        
+        fetch('https://api.kickofflabs.com/v1/170980/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: email,
+            first_name: firstName,
+            __source: 'website',
+            __url: window.location.href
+          })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data && data.email) {
+            window.location.href = 'https://openmusic.io/thanks.html';
+          } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('Something went wrong. Please try again.');
+          }
+        })
+        .catch(function() {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert('Connection error. Please try again.');
+        });
+      });
+    }
+    
+    // ============================================
     // Konami Code Easter Egg
     // up up down down left right left right B A
     // ============================================
@@ -1213,7 +1236,6 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
         setTimeout(() => feedback.remove(), 300);
       }, 4000);
     }
-
   </script>
 </body>
 </html>
