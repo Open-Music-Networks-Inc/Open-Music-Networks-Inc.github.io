@@ -22,7 +22,21 @@
   <script src="https://b.kickoffpages.com/2.1.0/kol.js" id="koljs" data-campaign-id="170980" async></script>
 
  
-  
+  <!-- Suppress KickoffLabs returning-visitor popup -->
+<script>
+  (function() {
+    var observer = new MutationObserver(function() {
+      document.querySelectorAll(
+        '[class*="kol-"], [id*="kol-"], [class*="kickoff"], iframe[src*="kickoff"]'
+      ).forEach(function(el) {
+        if (!el.id || el.id !== 'koljs') el.remove();
+      });
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(function() { observer.disconnect(); }, 8000);
+  })();
+</script>
+
   <style>
     /* ============================================
        Design Tokens (NeoRelief v2.3)
