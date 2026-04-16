@@ -925,8 +925,12 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
     <div class="container">
       <h2 class="animate-header">Start something that lasts.</h2>
       <p class="subhead animate-content">Openmusic is in beta. Join the waitlist.</p>
-      <form class="signup-form animate-content">
+      <form class="signup-form animate-content"
+            action="https://api.kickofflabs.com/v1/170980/subscribe"
+            method="POST"
+            target="kol-submit">
         <input type="hidden" name="last_name" value="" />
+        <input type="hidden" name="__source" value="website" />
         <input
           type="text"
           name="first_name"
@@ -949,6 +953,9 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
     </div>
   </section>
   
+  <!-- Hidden iframe for form submission -->
+  <iframe name="kol-submit" style="display:none" aria-hidden="true"></iframe>
+
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -1047,48 +1054,22 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
     
     
     // ============================================
-    // Signup Form -- KickoffLabs API (no kol.js)
+    // Signup Form -- submit to hidden iframe, then redirect
     // ============================================
     const signupForm = document.querySelector('.signup-form');
-    if (signupForm) {
-      signupForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const btn = signupForm.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
-        const firstName = signupForm.querySelector('input[name="first_name"]').value.trim();
-        const email = signupForm.querySelector('input[name="email"]').value.trim();
-        
-        if (!firstName || !email) return;
-        
+    const kolFrame = document.querySelector('iframe[name="kol-submit"]');
+    if (signupForm && kolFrame) {
+      signupForm.addEventListener('submit', function() {
+        var btn = signupForm.querySelector('button[type="submit"]');
         btn.textContent = 'Joining...';
         btn.disabled = true;
-        
-        fetch('https://api.kickofflabs.com/v2/170980', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email,
-            first_name: firstName,
-            __source: 'website',
-            __url: window.location.href
-          })
-        })
-        .then(function(res) { return res.json(); })
-        .then(function(data) {
-          if (data && data.email) {
-            window.location.href = 'https://openmusic.io/thanks.html';
-          } else {
-            btn.textContent = originalText;
-            btn.disabled = false;
-            alert('Something went wrong. Please try again.');
-          }
-        })
-        .catch(function() {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          alert('Connection error. Please try again.');
-        });
+      });
+      kolFrame.addEventListener('load', function() {
+        // Only redirect after the form has actually been submitted
+        // (iframe load also fires on initial page load with empty src)
+        if (signupForm.querySelector('button[type="submit"]').disabled) {
+          window.location.href = 'https://openmusic.io/thanks.html';
+        }
       });
     }
     
