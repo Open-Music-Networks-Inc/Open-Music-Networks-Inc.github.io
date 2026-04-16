@@ -1208,12 +1208,12 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
         setTimeout(() => feedback.remove(), 300);
       }, 4000);
     }
-    /* Hide KickoffLabs popup widget */
-[class*="kol-popup"],
-[class*="kol-widget"],
-[class*="kol-overlay"],
-[id*="kol-"],
-iframe[src*="kickoff"] {
+   /* Hide KickoffLabs popup widget only */
+div[class*="kol-popup"],
+div[class*="kol-widget"],
+div[class*="kol-overlay"],
+div[class*="kol-modal"],
+div[class*="kol-embed"] {
   display: none !important;
 }
   </script>
