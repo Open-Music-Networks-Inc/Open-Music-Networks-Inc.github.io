@@ -1208,6 +1208,14 @@ UklGRlp9AABXRUJQVlA4IE59AADwMgWdASrQB2UEPu10r1OzubisJHgaYzAdiWlDF2/9kNBZ//uX8L09
         setTimeout(() => feedback.remove(), 300);
       }, 4000);
     }
+    /* Hide KickoffLabs popup widget */
+[class*="kol-popup"],
+[class*="kol-widget"],
+[class*="kol-overlay"],
+[id*="kol-"],
+iframe[src*="kickoff"] {
+  display: none !important;
+}
   </script>
 </body>
 </html>
