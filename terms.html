@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use &mdash; Openmusic</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Terms of Use -- Openmusic">
+  <meta property="og:description" content="Terms and conditions for using the Openmusic platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://openmusic.io/terms.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Mona Sans -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/mona-sans@5.0.0/index.min.css">
+
+  <style>
+    :root {
+      --stone-50: #fafafa;
+      --stone-100: #f5f5f5;
+      --stone-200: #e5e5e5;
+      --stone-300: #d4d4d4;
+      --stone-400: #a3a3a3;
+      --stone-500: #737373;
+      --stone-600: #525252;
+      --stone-700: #404040;
+      --stone-800: #262626;
+      --stone-900: #171717;
+
+      --indigo-500: #6366f1;
+      --indigo-600: #4f46e5;
+      --indigo-700: #4338ca;
+
+      --bg: #F8F8F7;
+      --bg-surface: #ffffff;
+      --text: #171717;
+      --text-body: #525252;
+      --text-secondary: #737373;
+      --text-muted: #a3a3a3;
+      --border: #ebebeb;
+      --accent: #4f46e5;
+      --accent-hover: #4338ca;
+
+      --max-width: 660px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo svg {
+      height: 28px;
+      width: auto;
+    }
+
+    /* Legal content */
+    main {
+      flex: 1;
+      padding: 3.5rem 0 4rem;
+    }
+
+    .legal-content h1 {
+      font-size: clamp(1.5rem, 4vw, 1.889rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-content .effective-date {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    .legal-content p {
+      color: var(--text-body);
+      margin-bottom: 1rem;
+    }
+
+    .legal-content h2 {
+      font-size: 1.222rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-content ul,
+    .legal-content ol {
+      color: var(--text-body);
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .legal-content li {
+      margin-bottom: 0.375rem;
+    }
+
+    .legal-content a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .legal-content a:hover {
+      color: var(--accent-hover);
+    }
+
+    .legal-content strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .legal-content .caps-block {
+      text-transform: none;
+      font-size: 0.875rem;
+      line-height: 1.65;
+    }
+
+    .legal-content hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .legal-content .copyright {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-brand .logo svg {
+      height: 28px;
+      width: auto;
+    }
+
+    .footer-copyright {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-column h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.875rem;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-column a {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 1.5rem;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg width="130" height="25" viewBox="0 0 163 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="11.75" y="1" width="40.2491" height="28.6173" rx="14.3086" stroke="currentColor" stroke-width="2"/>
+          <path d="M15.0889 1C22.8564 1 29.1777 7.3925 29.1777 15.3086C29.1777 23.2247 22.8564 29.6172 15.0889 29.6172C7.32137 29.6171 1 23.2247 1 15.3086C1.00003 7.39253 7.32138 1.00006 15.0889 1Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M68.218 22.662C67.222 22.662 66.322 22.512 65.518 22.212C64.714 21.912 64.018 21.474 63.43 20.898C62.854 20.322 62.41 19.62 62.098 18.792C61.786 17.952 61.63 16.998 61.63 15.93C61.63 14.862 61.786 13.914 62.098 13.086C62.41 12.258 62.854 11.556 63.43 10.98C64.018 10.404 64.714 9.966 65.518 9.666C66.322 9.366 67.222 9.216 68.218 9.216C69.214 9.216 70.114 9.366 70.918 9.666C71.722 9.966 72.418 10.404 73.006 10.98C73.594 11.556 74.038 12.258 74.338 13.086C74.65 13.914 74.806 14.862 74.806 15.93C74.806 16.998 74.65 17.952 74.338 18.792C74.026 19.62 73.576 20.322 72.988 20.898C72.412 21.474 71.722 21.912 70.918 22.212C70.114 22.512 69.214 22.662 68.218 22.662ZM68.218 20.268C68.974 20.268 69.628 20.106 70.18 19.782C70.744 19.458 71.176 18.978 71.476 18.342C71.776 17.694 71.926 16.89 71.926 15.93C71.926 15.21 71.836 14.586 71.656 14.058C71.488 13.518 71.242 13.068 70.918 12.708C70.594 12.336 70.204 12.06 69.748 11.88C69.292 11.7 68.782 11.61 68.218 11.61C67.474 11.61 66.82 11.772 66.256 12.096C65.704 12.408 65.278 12.888 64.978 13.536C64.678 14.172 64.528 14.97 64.528 15.93C64.528 16.65 64.612 17.286 64.78 17.838C64.96 18.378 65.212 18.828 65.536 19.188C65.86 19.548 66.244 19.818 66.688 19.998C67.144 20.178 67.654 20.268 68.218 20.268ZM76.5832 25.506V12.852H79.1392L79.2292 14.526H79.3732C79.6012 13.974 79.9792 13.53 80.5072 13.194C81.0472 12.846 81.6892 12.672 82.4332 12.672C83.0092 12.672 83.5312 12.78 83.9992 12.996C84.4792 13.2 84.8872 13.512 85.2232 13.932C85.5712 14.352 85.8352 14.874 86.0152 15.498C86.2072 16.122 86.3032 16.848 86.3032 17.676C86.3032 18.78 86.1412 19.704 85.8172 20.448C85.4932 21.192 85.0372 21.75 84.4492 22.122C83.8732 22.494 83.2012 22.68 82.4332 22.68C81.9412 22.68 81.4912 22.602 81.0832 22.446C80.6752 22.29 80.3272 22.074 80.0392 21.798C79.7512 21.522 79.5292 21.198 79.3732 20.826H79.2292V25.506H76.5832ZM81.4432 20.538C81.8752 20.538 82.2532 20.436 82.5772 20.232C82.9012 20.016 83.1472 19.698 83.3152 19.278C83.4952 18.858 83.5852 18.324 83.5852 17.676C83.5852 17.016 83.4952 16.476 83.3152 16.056C83.1472 15.636 82.9012 15.324 82.5772 15.12C82.2532 14.916 81.8752 14.814 81.4432 14.814C80.9512 14.814 80.5432 14.928 80.2192 15.156C79.8952 15.384 79.6552 15.678 79.4992 16.038C79.3432 16.398 79.2652 16.788 79.2652 17.208V18.144C79.2652 18.456 79.3072 18.756 79.3912 19.044C79.4752 19.32 79.6072 19.572 79.7872 19.8C79.9672 20.016 80.1952 20.196 80.4712 20.34C80.7472 20.472 81.0712 20.538 81.4432 20.538ZM92.3076 22.68C91.2996 22.68 90.4416 22.476 89.7336 22.068C89.0376 21.66 88.5036 21.084 88.1316 20.34C87.7596 19.596 87.5736 18.732 87.5736 17.748C87.5736 16.704 87.7596 15.804 88.1316 15.048C88.5156 14.292 89.0496 13.71 89.7336 13.302C90.4296 12.882 91.2516 12.672 92.1996 12.672C93.3036 12.672 94.2036 12.912 94.8996 13.392C95.6076 13.872 96.1176 14.532 96.4296 15.372C96.7416 16.212 96.8436 17.172 96.7356 18.252H90.1656C90.1656 18.78 90.2496 19.23 90.4176 19.602C90.5976 19.962 90.8496 20.232 91.1736 20.412C91.4976 20.592 91.8756 20.682 92.3076 20.682C92.7996 20.682 93.2136 20.568 93.5496 20.34C93.8856 20.112 94.1016 19.812 94.1976 19.44H96.6816C96.6096 20.1 96.3756 20.676 95.9796 21.168C95.5836 21.648 95.0676 22.02 94.4316 22.284C93.8076 22.548 93.0996 22.68 92.3076 22.68ZM90.1656 16.866L89.9316 16.614H94.3956L94.1436 16.866C94.1676 16.362 94.0956 15.954 93.9276 15.642C93.7716 15.318 93.5436 15.072 93.2436 14.904C92.9556 14.736 92.6076 14.652 92.1996 14.652C91.7916 14.652 91.4316 14.742 91.1196 14.922C90.8196 15.09 90.5856 15.342 90.4176 15.678C90.2616 16.002 90.1776 16.398 90.1656 16.866ZM98.468 22.5V12.852H101.006L101.114 14.598H101.222C101.486 13.95 101.894 13.47 102.446 13.158C102.998 12.834 103.616 12.672 104.3 12.672C104.78 12.672 105.224 12.75 105.632 12.906C106.052 13.05 106.412 13.278 106.712 13.59C107.024 13.902 107.264 14.316 107.432 14.832C107.612 15.336 107.702 15.948 107.702 16.668V22.5H105.056V17.244C105.056 16.704 104.99 16.254 104.858 15.894C104.738 15.534 104.546 15.27 104.282 15.102C104.018 14.922 103.67 14.832 103.238 14.832C102.782 14.832 102.398 14.94 102.086 15.156C101.774 15.372 101.534 15.654 101.366 16.002C101.198 16.35 101.114 16.728 101.114 17.136V22.5H98.468ZM109.876 22.5V12.852H112.432L112.522 14.598H112.63C112.882 13.95 113.272 13.47 113.8 13.158C114.34 12.834 114.934 12.672 115.582 12.672C116.254 12.672 116.866 12.834 117.418 13.158C117.982 13.482 118.39 14.04 118.642 14.832H118.786C119.026 14.112 119.434 13.572 120.01 13.212C120.586 12.852 121.24 12.672 121.972 12.672C122.596 12.672 123.154 12.804 123.646 13.068C124.15 13.332 124.546 13.758 124.834 14.346C125.122 14.922 125.266 15.696 125.266 16.668V22.5H122.62V17.244C122.62 16.704 122.56 16.254 122.44 15.894C122.332 15.534 122.146 15.27 121.882 15.102C121.63 14.922 121.306 14.832 120.91 14.832C120.478 14.832 120.112 14.94 119.812 15.156C119.512 15.372 119.284 15.654 119.128 16.002C118.972 16.35 118.894 16.728 118.894 17.136V22.5H116.248V17.244C116.248 16.704 116.188 16.254 116.068 15.894C115.948 15.534 115.762 15.27 115.51 15.102C115.258 14.922 114.934 14.832 114.538 14.832C114.106 14.832 113.74 14.94 113.44 15.156C113.14 15.372 112.912 15.654 112.756 16.002C112.6 16.35 112.522 16.728 112.522 17.136V22.5H109.876ZM130.609 22.662C129.865 22.662 129.235 22.518 128.719 22.23C128.203 21.942 127.813 21.516 127.549 20.952C127.297 20.376 127.171 19.68 127.171 18.864V12.852H129.817V18.162C129.817 18.666 129.877 19.092 129.997 19.44C130.129 19.788 130.327 20.058 130.591 20.25C130.867 20.43 131.221 20.52 131.653 20.52C132.097 20.52 132.475 20.412 132.787 20.196C133.099 19.98 133.339 19.698 133.507 19.35C133.675 18.99 133.759 18.6 133.759 18.18V12.852H136.405V22.5H133.867L133.759 20.736H133.633C133.405 21.36 133.015 21.84 132.463 22.176C131.923 22.5 131.305 22.662 130.609 22.662ZM142.235 22.68C141.359 22.68 140.603 22.548 139.967 22.284C139.343 22.008 138.857 21.63 138.509 21.15C138.173 20.658 138.005 20.088 138.005 19.44H140.597C140.609 19.92 140.771 20.268 141.083 20.484C141.407 20.7 141.815 20.808 142.307 20.808C142.799 20.808 143.165 20.718 143.405 20.538C143.657 20.358 143.783 20.112 143.783 19.8C143.783 19.548 143.723 19.356 143.603 19.224C143.483 19.08 143.285 18.972 143.009 18.9C142.745 18.816 142.385 18.744 141.929 18.684C141.101 18.552 140.411 18.378 139.859 18.162C139.319 17.946 138.911 17.646 138.635 17.262C138.371 16.878 138.239 16.374 138.239 15.75C138.239 15.126 138.407 14.586 138.743 14.13C139.091 13.674 139.571 13.32 140.183 13.068C140.795 12.804 141.509 12.672 142.325 12.672C143.105 12.672 143.789 12.798 144.377 13.05C144.965 13.302 145.427 13.656 145.763 14.112C146.099 14.568 146.273 15.108 146.285 15.732H143.675C143.675 15.456 143.615 15.228 143.495 15.048C143.387 14.868 143.225 14.736 143.009 14.652C142.793 14.568 142.541 14.526 142.253 14.526C141.833 14.526 141.497 14.616 141.245 14.796C141.005 14.964 140.885 15.204 140.885 15.516C140.885 15.744 140.951 15.93 141.083 16.074C141.227 16.206 141.455 16.314 141.767 16.398C142.091 16.482 142.499 16.56 142.991 16.632C143.591 16.716 144.107 16.83 144.539 16.974C144.971 17.106 145.331 17.286 145.619 17.514C145.907 17.742 146.123 18.024 146.267 18.36C146.411 18.696 146.483 19.098 146.483 19.566C146.483 20.562 146.093 21.33 145.313 21.87C144.533 22.41 143.507 22.68 142.235 22.68ZM148.197 22.5V12.852H150.843V22.5H148.197ZM148.197 11.61V9.378H150.843V11.61H148.197ZM157.33 22.662C156.61 22.662 155.956 22.548 155.368 22.32C154.78 22.08 154.27 21.738 153.838 21.294C153.418 20.85 153.094 20.322 152.866 19.71C152.65 19.098 152.542 18.42 152.542 17.676C152.542 16.656 152.74 15.774 153.136 15.03C153.532 14.286 154.096 13.71 154.828 13.302C155.56 12.882 156.424 12.672 157.42 12.672C158.248 12.672 158.98 12.828 159.616 13.14C160.264 13.452 160.78 13.884 161.164 14.436C161.548 14.988 161.758 15.63 161.794 16.362H159.202C159.154 16.026 159.04 15.744 158.86 15.516C158.692 15.288 158.476 15.12 158.212 15.012C157.96 14.892 157.672 14.832 157.348 14.832C156.892 14.832 156.502 14.952 156.178 15.192C155.854 15.42 155.614 15.75 155.458 16.182C155.302 16.602 155.224 17.1 155.224 17.676C155.224 18.312 155.308 18.84 155.476 19.26C155.656 19.668 155.902 19.98 156.214 20.196C156.538 20.4 156.91 20.502 157.33 20.502C157.714 20.502 158.038 20.436 158.302 20.304C158.578 20.172 158.794 19.986 158.95 19.746C159.118 19.506 159.214 19.236 159.238 18.936H161.812C161.776 19.692 161.56 20.352 161.164 20.916C160.78 21.468 160.258 21.9 159.598 22.212C158.938 22.512 158.182 22.662 157.33 22.662Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container legal-content">
+
+      <h1>Terms of Use</h1>
+      <p class="effective-date"><strong>Effective Date:</strong> April 20, 2026</p>
+
+      <p>Welcome to Openmusic, a service facilitating your work as a creator of music. These terms and conditions (the &ldquo;Terms of Use&rdquo;) apply to the platform Openmusic (&ldquo;Openmusic&rdquo;) and all services on Openmusic (collectively, including all content available through the openmusic.io domain name and any country-specific domains or subdomains thereof, or mobile applications accessing or associated with openmusic.io, the &ldquo;Service&rdquo;) provided by Open Music Networks Inc., an Ontario, Canada, corporation (the &ldquo;Provider&rdquo;) to the users of the Service (the &ldquo;User(s)&rdquo; / &ldquo;You&rdquo; / &ldquo;Your&rdquo;).</p>
+
+      <h2>1. Acceptance of Terms</h2>
+
+      <p>A. By using the Service You acknowledge that You have read, understand and agree to be bound by these Terms of Use and undertake not to use the Service in breach of these Terms of Use. These Terms of Use and Openmusic&rsquo;s Privacy Policy, found at <a href="privacy.html">https://openmusic.io/privacy</a> and incorporated here by reference, constitute the agreement (&ldquo;Agreement&rdquo;) between You and the Provider.</p>
+
+      <p>If You do not agree to any of these terms, or the Openmusic Privacy Policy, please do not use Openmusic.</p>
+
+      <p>B. Although we may attempt to notify You when major changes are made to these Terms of Use, You should periodically review the most up-to-date version (<a href="terms.html">https://openmusic.io/terms</a>). Openmusic may, in its sole discretion, modify or revise these Terms of Use and policies at any time, and You agree to be bound by such modifications or revisions. Nothing in this Agreement shall be deemed to confer any third-party rights or benefits.</p>
+
+      <p>C. These Terms of Use apply to all Users of the Service including Users who are contributors of audio or text content, information, and other materials on Openmusic.</p>
+
+      <h2>2. Third Party Websites</h2>
+
+      <p>A. Openmusic may contain links to third-party websites and/or APIs that are not owned or controlled by the Provider. The Provider has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party websites. In addition, the Provider will not and cannot censor or edit the content of any third-party site. By using the Service, You expressly relieve the Provider from any and all liability arising from Your use of any third-party website or API.</p>
+
+      <h2>3. Accounts</h2>
+
+      <p>A. In order to access some features of the Service, you will have to create an Openmusic account. You may never use another&rsquo;s account without permission. When creating Your account, You must provide accurate and complete information. You are solely responsible for the activity that occurs on Your account, and You must keep your account password secure. You must notify the Provider immediately of any breach of security or unauthorized use of Your account.</p>
+
+      <p>B. Although the Provider will not be liable for your losses caused by any unauthorized use of Your account, You may be liable for the losses of the Provider or others due to such unauthorized use.</p>
+
+      <p>C. You will not create an account if You are under 16 years of age.</p>
+
+      <p>D. You are encouraged to create no more than one account. Using multiple accounts for any malicious activity will result in immediate account termination.</p>
+
+      <p>E. The Provider reserves the right to terminate any account without notice.</p>
+
+      <h2>4. General Use of Openmusic</h2>
+
+      <p>The Provider hereby grants You permission to access and use the Service as set forth in these Terms of Use, provided that:</p>
+
+      <p>A. You agree not to distribute in any medium any part of Openmusic, including but not limited to User Submissions (defined below), without the Provider&rsquo;s prior written authorization, or, in the case of User Submissions, without the prior written authorization of the User who submitted the content.</p>
+
+      <p>B. You agree not to alter or modify any part of the Openmusic platform.</p>
+
+      <p>C. You agree not to access User Submissions (defined below) or Openmusic Content through any technology or means other than Openmusic itself.</p>
+
+      <p>D. You agree not to use Openmusic for any commercial use without the prior written authorization of the Provider. Prohibited commercial uses include any of the following actions taken without the Provider&rsquo;s express approval: sale of access to the Service; use of the Service for the primary purpose of gaining advertising or subscription revenue; the sale of advertising on Openmusic or any third-party website, targeted to the content of specific User Submissions or Openmusic Content; any use of the Service that the Provider finds, in its sole discretion, has the effect of competing with or displacing the market for Openmusic, Openmusic Content, or its User Submissions.</p>
+
+      <p>E. You agree not to use or launch any automated system, including without limitation, &ldquo;robots,&rdquo; &ldquo;spiders,&rdquo; or &ldquo;offline readers,&rdquo; that accesses Openmusic in a manner that sends more request messages to the Openmusic servers in a given period of time than a human can reasonably produce in the same period by using a conventional on-line web browser. Notwithstanding the foregoing, the Provider grants the operators of public search engines permission to use spiders to copy materials from the site for the sole purpose of and solely to the extent necessary for creating publicly available searchable indices of the materials, but not caches or archives of such materials. The Provider reserves the right to revoke these exceptions either generally or in specific cases. You agree not to collect or harvest any personally identifiable information, including account names, from Openmusic, nor to use the communication systems provided by Openmusic (e.g. comments, chat, messaging) for any commercial solicitation purposes.</p>
+
+      <p>F. In Your use of the Service, You will otherwise comply with the terms and conditions of these Terms of Use, and all applicable local, national, and international laws and regulations.</p>
+
+      <p>G. The Provider reserves the right to discontinue any aspect of the Service at any time.</p>
+
+      <h2>5. Use of Content on the Site</h2>
+
+      <p>In addition to the general restrictions above, the following restrictions and conditions apply specifically to Your use of content on Openmusic.</p>
+
+      <p>A. The content on Openmusic, except all User Submissions (as defined below), including without limitation, the text, software, scripts, graphics, photos, sounds, music, videos, interactive features and the like (&ldquo;Content&rdquo;) and the trademarks, service marks and logos contained therein (&ldquo;Marks&rdquo;), are owned by or licensed to the Provider, subject to copyright and other intellectual property rights under the law. Content is provided to You AS IS for your information and personal use only and may not be downloaded, copied, modified, produced, reproduced, distributed, transmitted, broadcast, displayed, sold, licensed, translated, published, performed or otherwise exploited for any other purposes whatsoever without the prior written consent of the respective owners. The Provider reserves all rights not expressly granted in and to the Openmusic and the Content.</p>
+
+      <p>B. You may access User Submissions solely for your information and personal use; and as intended through the normal functionality of the Service.</p>
+
+      <p>C. You may access Openmusic Content, User Submissions, and other content only as permitted under this Agreement. The Provider reserves all rights not expressly granted in and to the Content and the Service.</p>
+
+      <p>D. You agree to not engage in the use, copying, or distribution of any of the Content or User Submissions of third parties obtained through Openmusic other than expressly permitted herein.</p>
+
+      <p>E. You agree not to circumvent, disable or otherwise interfere with security-related features of Openmusic or features that prevent or restrict use or copying of any Content or enforce limitations on the use of Openmusic or the Content therein.</p>
+
+      <p>F. You understand that when using Openmusic, You will be exposed to User Submissions from a variety of sources, and that the Provider is not responsible for the accuracy, usefulness, safety, or intellectual property rights of or relating to such User Submissions. You further understand and acknowledge that You may be exposed to User Submissions that are offensive, indecent, or objectionable, and You agree to waive, and hereby do waive, any legal or equitable rights or remedies You have or may have against the Provider with respect thereto, and agree to indemnify and hold the Provider, its affiliates, and/or licensors, harmless to the fullest extent allowed by law regarding all matters related to Your use of the Service.</p>
+
+      <h2>6. User Submissions and Conduct</h2>
+
+      <p>A. As an Openmusic account holder, You may submit textual, audio, visual, or audiovisual content including but not limited to music, lyrics/poetry, profile images, and instant messages. User submitted content is collectively referred to as &ldquo;User Submissions.&rdquo; You understand that whether or not such User Submissions are published, the Provider does not guarantee any confidentiality with respect to any User Submissions.</p>
+
+      <p>B. You shall be solely responsible for Your User Submissions and the consequences of posting or publishing or licensing them. In connection with User Submissions, You affirm, represent, and/or warrant that: You own or have the necessary licenses, rights, consents, and permissions to use and authorize the Provider to use all patent, trademark, trade secret, copyright or other proprietary rights in and to any and all of Your User Submissions; You have all necessary consents to collect, use and disclose any personally identifiable information contained or displayed in any and all of Your User Submissions, and to enable inclusion and use of the User Submissions in the manner contemplated by the Provider and these Terms of Use.</p>
+
+      <p>C. <strong>Ownership.</strong> For clarity, You retain all of Your ownership rights in Your User Submissions. Nothing in these Terms of Use transfers ownership of Your creative works to the Provider or to other Users.</p>
+
+      <p>D. <strong>Platform License.</strong> By submitting User Submissions to Openmusic, You hereby grant the Provider a worldwide, non-exclusive, royalty-free, sublicensable license to use, reproduce, distribute, display, and perform the User Submissions solely in connection with the operation and provision of Openmusic. This license exists for the limited purpose of enabling the Provider to host, serve, cache, transcode, and otherwise make Your User Submissions available through the Service. This license is separate from and not subject to the Creative Commons license described in Section 6E below. You understand and agree that the Provider may retain, but not display, distribute, or perform, server copies of User Submissions that have been removed or deleted.</p>
+
+      <p>E. <strong>User-to-User License.</strong> Unless You designate otherwise through a license option made available by the Provider, Your User Submissions are licensed to other Users of the Service under the Creative Commons Attribution-NonCommercial 4.0 International License (&ldquo;CC BY-NC 4.0&rdquo;), the full text of which is available at <a href="https://creativecommons.org/licenses/by-nc/4.0/legalcode">https://creativecommons.org/licenses/by-nc/4.0/legalcode</a>. Under CC BY-NC 4.0, other Users may access, use, remix, and create derivative works from Your User Submissions, provided they (i) give appropriate attribution as facilitated by the platform&rsquo;s metadata and credits system, and (ii) do not use the material for commercial purposes. The Provider may from time to time make additional Creative Commons or other license options available; any such options will be clearly identified within the Service.</p>
+
+      <p>F. <strong>Commercial Use of Collaborative Works.</strong> The CC BY-NC 4.0 default does not prevent You from granting additional permissions for Your own contributions. Users who wish to commercially exploit collaborative works &mdash; including works that incorporate User Submissions from multiple contributors &mdash; must obtain separate authorization from each contributing User. The Provider may offer tools to facilitate such arrangements (e.g., split-sheet agreements, commercial license grants), but the Provider is not a party to any such agreement between Users and assumes no responsibility for the terms or performance of such agreements.</p>
+
+      <p>G. In connection with User Submissions, You further agree that You will not submit material that is copyrighted, protected by trade secret or otherwise subject to third party proprietary rights, including privacy and publicity rights, unless You are the owner of such rights or have permission from their rightful owner(s) and the necessary consents from any individuals whose personally identifiable information is contained in such material, to post the material and to grant the Provider all of the license rights granted herein.</p>
+
+      <p>H. You further agree that You will not, in connection with User Submissions, submit material that is contrary to applicable local, national, and international laws and regulations.</p>
+
+      <p>I. The Provider does not endorse any User Submission or any opinion, recommendation, or advice expressed therein, and expressly disclaims any and all liability in connection with User Submissions. The Provider does not permit copyright infringing activities and infringement of intellectual property rights on Openmusic, and will remove all Content and User Submissions if properly notified that such Content or User Submission infringes on another&rsquo;s intellectual property rights or contravenes any applicable privacy legislation. The Provider reserves the right to remove Content and User Submissions without prior notice.</p>
+
+      <h2>7. Account Termination Policy</h2>
+
+      <p>A. The Provider will terminate a User&rsquo;s access to Openmusic if, under appropriate circumstances, the User is determined to be an infringer.</p>
+
+      <p>B. The Provider reserves the right to decide whether Content or a User Submission is appropriate and complies with these Terms of Use for violations other than copyright infringement or privacy law, such as, but not limited to, hate crimes, pornography, obscene or defamatory material, or excessive length. The Provider may remove such User Submissions and/or terminate a User&rsquo;s access for uploading such material in violation of these Terms of Use at any time, without prior notice and at its sole discretion.</p>
+
+      <h2>8. Copyright Policy</h2>
+
+      <p>As part of the Openmusic copyright policy, the Provider may terminate User access to the Service if a User has been determined to be an infringer. To file a copyright infringement notification, You will need to send a communication with all of the following information in it, using this format:</p>
+
+      <ol>
+        <li>Include a statement telling us that You have found content on Openmusic which You believe infringes Your copyright (for example, &ldquo;I hereby confirm that I believe the audio file identified below infringes my copyright&rdquo;).</li>
+        <li>Tell us which country Your copyright applies to.</li>
+        <li>Tell us the title of the content concerned.</li>
+        <li>Explain to us in what way that content infringes Your copyright.</li>
+        <li>Identify details of (e.g. title, publisher, dates, etc.) the copyright work which You own the rights in, and which You believe has been infringed. If this information is available on the internet, it is helpful to send us a link.</li>
+        <li>Let us have contact information so that we can get in touch with You (email address is preferred).</li>
+        <li>Let us have the contact information which we can pass on to the submitter of the content concerned, so that they can get in touch with You to resolve Your complaint directly (email address is preferred).</li>
+        <li>Include the following statement: &ldquo;I have a good faith belief that use of the copyrighted work described above is not authorized by the copyright owner (or by a third party who is legally entitled to do so on behalf of the copyright owner) and is not otherwise permitted by law. I swear that the information contained in this notification is accurate and that I am the copyright owner or have an exclusive right in law to bring infringement proceedings with respect to its use.&rdquo;</li>
+        <li>Sign the notice. If You are providing notice by e-mail, a scanned physical signature or a valid electronic signature will be accepted.</li>
+        <li>Send the notice, in English, to the following address:</li>
+      </ol>
+
+      <p>Attn: Openmusic Copyright Infringement Notification<br>
+      Email: <a href="mailto:copyright@openmusic.io">copyright@openmusic.io</a></p>
+
+      <p>Please also note that the information provided in this legal notice may be forwarded to the person who provided the allegedly infringing content. Make sure You know whether the content that You have discovered on Openmusic infringes Your copyright. Be aware that there may be adverse legal consequences in Your country if You make a false or bad faith allegation of copyright infringement using this process.</p>
+
+      <p>If You submit a User Submission to Openmusic then You authorize the Provider to act as Your agent to issue take down notices under the Digital Millennium Copyright Act (the &ldquo;DMCA&rdquo;) and/or any other similar legislation that allows for the submission of requests to Internet service providers for the removal of infringing or allegedly infringing copyright materials that are contained in or displayed on such service providers platforms and/or services. In general You will be responsible for monitoring and enforcing Your rights in Your User Submissions, however, in certain cases if the Provider becomes aware of infringement of User Submissions and/or Content from Openmusic, then the Provider may in its sole discretion elect to issue take down notices under the DMCA or similar legislation to attempt to curtail such infringement.</p>
+
+      <h2>9. Warranty and Condition Disclaimer</h2>
+
+      <p class="caps-block">YOU AGREE THAT YOUR USE OF THE SERVICE SHALL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, THE PROVIDER, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS AND PARTNERS (INCLUDING MANUFACTURERS OF DEVICES THAT EXECUTE MOBILE APPLICATIONS ACCESSING OPENMUSIC) DISCLAIM ALL WARRANTIES AND CONDITIONS, WHETHER WRITTEN, ORAL, EXPRESS, IMPLIED, LEGAL, STATUTORY, CONTRACTUAL, EXTRA-CONTRACTUAL, DELICTUAL OR IN TORT, AND WHETHER ARISING BY LAW, STATUTE, USAGE OF TRADE, CUSTOM, COURSE OF DEALING OR PERFORMANCE, OR THE PARTIES&rsquo; CONDUCT OR COMMUNICATION WITH ONE ANOTHER, OR AS A RESULT OF THE NATURE OF THESE TERMS AND CONDITIONS, FOR THE SERVICE AND YOUR USE THEREOF OR IN CONFORMITY WITH USAGE, EQUITY OR LAW OR OTHERWISE.</p>
+
+      <p class="caps-block">THE PROVIDER MAKES NO WARRANTIES, CONDITIONS OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF OPENMUSIC CONTENT OR THE CONTENT OF ANY SITES LINKED TO OPENMUSIC AND ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, (II) PERSONAL INJURY, PROPERTY, BODILY, MORAL OR MATERIAL DAMAGE OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICE, (III) ANY UNAUTHORIZED ACCESS TO OR USE OF THE OPENMUSIC SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OPENMUSIC, (V) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE WHICH MAY BE TRANSMITTED TO OR THROUGH OPENMUSIC BY ANY THIRD PARTY, AND/OR (VI) ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA OPENMUSIC. THE PROVIDER EXPRESSLY DISCLAIMS ANY WARRANTY OR CONDITION OF ANY KIND OF FITNESS FOR A PARTICULAR OR GENERAL PURPOSE, QUALITY, MERCHANTABILITY, WORKMANSHIP, NON-INFRINGEMENT, OR TITLE AND OWNERSHIP. THE PROVIDER DOES NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR ANY PRODUCT OR SERVICE ADVERTISED OR OFFERED BY A THIRD PARTY THROUGH OPENMUSIC OR ANY HYPERLINKED WEBSITE AND THE PROVIDER WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES. AS WITH THE PURCHASE OF A PRODUCT OR SERVICE THROUGH ANY MEDIUM OR IN ANY ENVIRONMENT, YOU SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE PROVISIONS OF THE UNITED NATIONS CONVENTION ON CONTRACTS FOR THE INTERNATIONAL SALE OF GOODS ARE HEREBY DISCLAIMED.</p>
+
+      <h2>10. Limitation of Liability</h2>
+
+      <p class="caps-block">IN NO EVENT SHALL THE PROVIDER, ITS OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS, BE LIABLE TO YOU FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES WHATSOEVER RESULTING FROM ANY (I) ERRORS, MISTAKES, OR INACCURACIES OF CONTENT, (II) PERSONAL INJURY, PROPERTY, BODILY, MORAL OR MATERIAL DAMAGE OF ANY NATURE WHATSOEVER, RESULTING FROM YOUR ACCESS TO AND USE OF THE SERVICE, (III) ANY UNAUTHORIZED ACCESS TO OR USE OF THE OPENMUSIC SECURE SERVERS AND/OR ANY AND ALL PERSONAL INFORMATION AND/OR FINANCIAL INFORMATION STORED THEREIN, (IV) ANY INTERRUPTION OR CESSATION OF TRANSMISSION TO OR FROM OPENMUSIC, (V) ANY BUGS, VIRUSES, TROJAN HORSES, OR THE LIKE, WHICH MAY BE TRANSMITTED TO OR THROUGH OPENMUSIC BY ANY THIRD PARTY, AND/OR (VI) ANY ERRORS OR OMISSIONS IN ANY CONTENT OR FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR USE OF ANY CONTENT POSTED, EMAILED, TRANSMITTED, OR OTHERWISE MADE AVAILABLE VIA OPENMUSIC, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, AND WHETHER ARISING BY LAW, STATUTE, USAGE OF TRADE, CUSTOM, COURSE OF DEALING OR PERFORMANCE, OR THE PARTIES&rsquo; CONDUCT OR COMMUNICATION WITH ONE ANOTHER, OR AS A RESULT OF THE NATURE OF THESE TERMS AND CONDITIONS OR IN CONFORMITY WITH USAGE, EQUITY OR LAW OR OTHERWISE, AND WHETHER OR NOT THE PROVIDER IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE FOREGOING LIMITATION OF LIABILITY SHALL APPLY TO THE FULLEST EXTENT PERMITTED BY LAW IN THE APPLICABLE JURISDICTION. YOU SPECIFICALLY ACKNOWLEDGE THAT THE PROVIDER SHALL NOT BE LIABLE FOR USER SUBMISSIONS OR THE DEFAMATORY, OFFENSIVE, OR ILLEGAL CONDUCT OF ANY THIRD PARTY AND THAT THE RISK OF HARM OR DAMAGE FROM THE FOREGOING RESTS ENTIRELY WITH YOU.</p>
+
+      <p>The Provider makes no representations that Openmusic is appropriate or available for use. Those who access or use Openmusic do so at their own volition and are responsible for compliance with local law.</p>
+
+      <h2>11. Indemnity</h2>
+
+      <p>You agree to defend, indemnify and hold harmless the Provider, its affiliates, officers, directors, employees and agents, from and against any and all claims, demands, causes of action, damages, obligations, losses, liabilities, costs or debt, and expenses, (including but not limited to reasonable legal fees) arising from: (i) Your use of and access to Openmusic; (ii) Your violation of any term of these Terms of Use; (iii) Your violation of any third party right, including without limitation any copyright, intellectual property, or privacy right; or (iv) any claim that one of Your User Submissions caused damage to a third party. This defense and indemnification obligation will survive these Terms of Use and Your use of Openmusic.</p>
+
+      <h2>12. Ability to Accept Terms of Service</h2>
+
+      <p>You affirm that You are either more than the age of majority in Your jurisdiction of residence, or an emancipated minor, or possess legal parental or guardian consent, and are fully able and competent to enter into the terms, conditions, obligations, affirmations, representations, and warranties set forth in these Terms of Use, and to abide by and comply with these Terms of Use. You affirm that You are over the age of 16, as Openmusic is not intended for children under 16.</p>
+
+      <h2>13. Assignment</h2>
+
+      <p>These Terms of Use, and any rights and licenses granted hereunder, may not be transferred or assigned by You, but may be assigned by the Provider without restriction.</p>
+
+      <h2>14. Governing Law</h2>
+
+      <p>This Agreement shall be governed by and construed in accordance with the laws of the Province of Ontario and the laws of Canada applicable therein, without regard to conflict of law principles. Any dispute arising under this Agreement shall be subject to the exclusive jurisdiction of the courts of the Province of Ontario.</p>
+
+      <h2>15. General</h2>
+
+      <p>You agree that: these Terms of Use, together with the Privacy Policy at <a href="privacy.html">https://openmusic.io/privacy</a> and any other legal notices published by the Provider on Openmusic, shall constitute the entire agreement between You and the Provider concerning Openmusic and the Service. If any provision of these Terms of Use is deemed invalid by a court of competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of these Terms of Use, which shall remain in full force and effect. No waiver of any term of these Terms of Use shall be deemed a further or continuing waiver of such term or any other term, and the Provider&rsquo;s failure to assert any right or provision under these Terms of Use shall not constitute a waiver of such right or provision. The Provider reserves the right to amend these Terms of Use at any time and without notice, and it is Your responsibility to review these Terms of Use for any changes. Your use of Openmusic following any amendment of these Terms of Use will signify Your assent to and acceptance of its revised terms.</p>
+
+      <p class="caps-block">TO THE MAXIMUM EXTENT PERMITTED BY LOCAL LAW, YOU AND THE PROVIDER AGREE THAT ANY CAUSE OF ACTION ARISING OUT OF OR RELATED TO OPENMUSIC MUST COMMENCE WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES. OTHERWISE, SUCH CAUSE OF ACTION IS PERMANENTLY BARRED.</p>
+
+      <hr>
+
+      <p class="copyright">&copy; 2026 Open Music Networks Inc.</p>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg width="163" height="31" viewBox="0 0 163 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="11.75" y="1" width="40.2491" height="28.6173" rx="14.3086" stroke="currentColor" stroke-width="2"/>
+              <path d="M15.0889 1C22.8564 1 29.1777 7.3925 29.1777 15.3086C29.1777 23.2247 22.8564 29.6172 15.0889 29.6172C7.32137 29.6171 1 23.2247 1 15.3086C1.00003 7.39253 7.32138 1.00006 15.0889 1Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M68.218 22.662C67.222 22.662 66.322 22.512 65.518 22.212C64.714 21.912 64.018 21.474 63.43 20.898C62.854 20.322 62.41 19.62 62.098 18.792C61.786 17.952 61.63 16.998 61.63 15.93C61.63 14.862 61.786 13.914 62.098 13.086C62.41 12.258 62.854 11.556 63.43 10.98C64.018 10.404 64.714 9.966 65.518 9.666C66.322 9.366 67.222 9.216 68.218 9.216C69.214 9.216 70.114 9.366 70.918 9.666C71.722 9.966 72.418 10.404 73.006 10.98C73.594 11.556 74.038 12.258 74.338 13.086C74.65 13.914 74.806 14.862 74.806 15.93C74.806 16.998 74.65 17.952 74.338 18.792C74.026 19.62 73.576 20.322 72.988 20.898C72.412 21.474 71.722 21.912 70.918 22.212C70.114 22.512 69.214 22.662 68.218 22.662ZM68.218 20.268C68.974 20.268 69.628 20.106 70.18 19.782C70.744 19.458 71.176 18.978 71.476 18.342C71.776 17.694 71.926 16.89 71.926 15.93C71.926 15.21 71.836 14.586 71.656 14.058C71.488 13.518 71.242 13.068 70.918 12.708C70.594 12.336 70.204 12.06 69.748 11.88C69.292 11.7 68.782 11.61 68.218 11.61C67.474 11.61 66.82 11.772 66.256 12.096C65.704 12.408 65.278 12.888 64.978 13.536C64.678 14.172 64.528 14.97 64.528 15.93C64.528 16.65 64.612 17.286 64.78 17.838C64.96 18.378 65.212 18.828 65.536 19.188C65.86 19.548 66.244 19.818 66.688 19.998C67.144 20.178 67.654 20.268 68.218 20.268ZM76.5832 25.506V12.852H79.1392L79.2292 14.526H79.3732C79.6012 13.974 79.9792 13.53 80.5072 13.194C81.0472 12.846 81.6892 12.672 82.4332 12.672C83.0092 12.672 83.5312 12.78 83.9992 12.996C84.4792 13.2 84.8872 13.512 85.2232 13.932C85.5712 14.352 85.8352 14.874 86.0152 15.498C86.2072 16.122 86.3032 16.848 86.3032 17.676C86.3032 18.78 86.1412 19.704 85.8172 20.448C85.4932 21.192 85.0372 21.75 84.4492 22.122C83.8732 22.494 83.2012 22.68 82.4332 22.68C81.9412 22.68 81.4912 22.602 81.0832 22.446C80.6752 22.29 80.3272 22.074 80.0392 21.798C79.7512 21.522 79.5292 21.198 79.3732 20.826H79.2292V25.506H76.5832ZM81.4432 20.538C81.8752 20.538 82.2532 20.436 82.5772 20.232C82.9012 20.016 83.1472 19.698 83.3152 19.278C83.4952 18.858 83.5852 18.324 83.5852 17.676C83.5852 17.016 83.4952 16.476 83.3152 16.056C83.1472 15.636 82.9012 15.324 82.5772 15.12C82.2532 14.916 81.8752 14.814 81.4432 14.814C80.9512 14.814 80.5432 14.928 80.2192 15.156C79.8952 15.384 79.6552 15.678 79.4992 16.038C79.3432 16.398 79.2652 16.788 79.2652 17.208V18.144C79.2652 18.456 79.3072 18.756 79.3912 19.044C79.4752 19.32 79.6072 19.572 79.7872 19.8C79.9672 20.016 80.1952 20.196 80.4712 20.34C80.7472 20.472 81.0712 20.538 81.4432 20.538ZM92.3076 22.68C91.2996 22.68 90.4416 22.476 89.7336 22.068C89.0376 21.66 88.5036 21.084 88.1316 20.34C87.7596 19.596 87.5736 18.732 87.5736 17.748C87.5736 16.704 87.7596 15.804 88.1316 15.048C88.5156 14.292 89.0496 13.71 89.7336 13.302C90.4296 12.882 91.2516 12.672 92.1996 12.672C93.3036 12.672 94.2036 12.912 94.8996 13.392C95.6076 13.872 96.1176 14.532 96.4296 15.372C96.7416 16.212 96.8436 17.172 96.7356 18.252H90.1656C90.1656 18.78 90.2496 19.23 90.4176 19.602C90.5976 19.962 90.8496 20.232 91.1736 20.412C91.4976 20.592 91.8756 20.682 92.3076 20.682C92.7996 20.682 93.2136 20.568 93.5496 20.34C93.8856 20.112 94.1016 19.812 94.1976 19.44H96.6816C96.6096 20.1 96.3756 20.676 95.9796 21.168C95.5836 21.648 95.0676 22.02 94.4316 22.284C93.8076 22.548 93.0996 22.68 92.3076 22.68ZM90.1656 16.866L89.9316 16.614H94.3956L94.1436 16.866C94.1676 16.362 94.0956 15.954 93.9276 15.642C93.7716 15.318 93.5436 15.072 93.2436 14.904C92.9556 14.736 92.6076 14.652 92.1996 14.652C91.7916 14.652 91.4316 14.742 91.1196 14.922C90.8196 15.09 90.5856 15.342 90.4176 15.678C90.2616 16.002 90.1776 16.398 90.1656 16.866ZM98.468 22.5V12.852H101.006L101.114 14.598H101.222C101.486 13.95 101.894 13.47 102.446 13.158C102.998 12.834 103.616 12.672 104.3 12.672C104.78 12.672 105.224 12.75 105.632 12.906C106.052 13.05 106.412 13.278 106.712 13.59C107.024 13.902 107.264 14.316 107.432 14.832C107.612 15.336 107.702 15.948 107.702 16.668V22.5H105.056V17.244C105.056 16.704 104.99 16.254 104.858 15.894C104.738 15.534 104.546 15.27 104.282 15.102C104.018 14.922 103.67 14.832 103.238 14.832C102.782 14.832 102.398 14.94 102.086 15.156C101.774 15.372 101.534 15.654 101.366 16.002C101.198 16.35 101.114 16.728 101.114 17.136V22.5H98.468ZM109.876 22.5V12.852H112.432L112.522 14.598H112.63C112.882 13.95 113.272 13.47 113.8 13.158C114.34 12.834 114.934 12.672 115.582 12.672C116.254 12.672 116.866 12.834 117.418 13.158C117.982 13.482 118.39 14.04 118.642 14.832H118.786C119.026 14.112 119.434 13.572 120.01 13.212C120.586 12.852 121.24 12.672 121.972 12.672C122.596 12.672 123.154 12.804 123.646 13.068C124.15 13.332 124.546 13.758 124.834 14.346C125.122 14.922 125.266 15.696 125.266 16.668V22.5H122.62V17.244C122.62 16.704 122.56 16.254 122.44 15.894C122.332 15.534 122.146 15.27 121.882 15.102C121.63 14.922 121.306 14.832 120.91 14.832C120.478 14.832 120.112 14.94 119.812 15.156C119.512 15.372 119.284 15.654 119.128 16.002C118.972 16.35 118.894 16.728 118.894 17.136V22.5H116.248V17.244C116.248 16.704 116.188 16.254 116.068 15.894C115.948 15.534 115.762 15.27 115.51 15.102C115.258 14.922 114.934 14.832 114.538 14.832C114.106 14.832 113.74 14.94 113.44 15.156C113.14 15.372 112.912 15.654 112.756 16.002C112.6 16.35 112.522 16.728 112.522 17.136V22.5H109.876ZM130.609 22.662C129.865 22.662 129.235 22.518 128.719 22.23C128.203 21.942 127.813 21.516 127.549 20.952C127.297 20.376 127.171 19.68 127.171 18.864V12.852H129.817V18.162C129.817 18.666 129.877 19.092 129.997 19.44C130.129 19.788 130.327 20.058 130.591 20.25C130.867 20.43 131.221 20.52 131.653 20.52C132.097 20.52 132.475 20.412 132.787 20.196C133.099 19.98 133.339 19.698 133.507 19.35C133.675 18.99 133.759 18.6 133.759 18.18V12.852H136.405V22.5H133.867L133.759 20.736H133.633C133.405 21.36 133.015 21.84 132.463 22.176C131.923 22.5 131.305 22.662 130.609 22.662ZM142.235 22.68C141.359 22.68 140.603 22.548 139.967 22.284C139.343 22.008 138.857 21.63 138.509 21.15C138.173 20.658 138.005 20.088 138.005 19.44H140.597C140.609 19.92 140.771 20.268 141.083 20.484C141.407 20.7 141.815 20.808 142.307 20.808C142.799 20.808 143.165 20.718 143.405 20.538C143.657 20.358 143.783 20.112 143.783 19.8C143.783 19.548 143.723 19.356 143.603 19.224C143.483 19.08 143.285 18.972 143.009 18.9C142.745 18.816 142.385 18.744 141.929 18.684C141.101 18.552 140.411 18.378 139.859 18.162C139.319 17.946 138.911 17.646 138.635 17.262C138.371 16.878 138.239 16.374 138.239 15.75C138.239 15.126 138.407 14.586 138.743 14.13C139.091 13.674 139.571 13.32 140.183 13.068C140.795 12.804 141.509 12.672 142.325 12.672C143.105 12.672 143.789 12.798 144.377 13.05C144.965 13.302 145.427 13.656 145.763 14.112C146.099 14.568 146.273 15.108 146.285 15.732H143.675C143.675 15.456 143.615 15.228 143.495 15.048C143.387 14.868 143.225 14.736 143.009 14.652C142.793 14.568 142.541 14.526 142.253 14.526C141.833 14.526 141.497 14.616 141.245 14.796C141.005 14.964 140.885 15.204 140.885 15.516C140.885 15.744 140.951 15.93 141.083 16.074C141.227 16.206 141.455 16.314 141.767 16.398C142.091 16.482 142.499 16.56 142.991 16.632C143.591 16.716 144.107 16.83 144.539 16.974C144.971 17.106 145.331 17.286 145.619 17.514C145.907 17.742 146.123 18.024 146.267 18.36C146.411 18.696 146.483 19.098 146.483 19.566C146.483 20.562 146.093 21.33 145.313 21.87C144.533 22.41 143.507 22.68 142.235 22.68ZM148.197 22.5V12.852H150.843V22.5H148.197ZM148.197 11.61V9.378H150.843V11.61H148.197ZM157.33 22.662C156.61 22.662 155.956 22.548 155.368 22.32C154.78 22.08 154.27 21.738 153.838 21.294C153.418 20.85 153.094 20.322 152.866 19.71C152.65 19.098 152.542 18.42 152.542 17.676C152.542 16.656 152.74 15.774 153.136 15.03C153.532 14.286 154.096 13.71 154.828 13.302C155.56 12.882 156.424 12.672 157.42 12.672C158.248 12.672 158.98 12.828 159.616 13.14C160.264 13.452 160.78 13.884 161.164 14.436C161.548 14.988 161.758 15.63 161.794 16.362H159.202C159.154 16.026 159.04 15.744 158.86 15.516C158.692 15.288 158.476 15.12 158.212 15.012C157.96 14.892 157.672 14.832 157.348 14.832C156.892 14.832 156.502 14.952 156.178 15.192C155.854 15.42 155.614 15.75 155.458 16.182C155.302 16.602 155.224 17.1 155.224 17.676C155.224 18.312 155.308 18.84 155.476 19.26C155.656 19.668 155.902 19.98 156.214 20.196C156.538 20.4 156.91 20.502 157.33 20.502C157.714 20.502 158.038 20.436 158.302 20.304C158.578 20.172 158.794 19.986 158.95 19.746C159.118 19.506 159.214 19.236 159.238 18.936H161.812C161.776 19.692 161.56 20.352 161.164 20.916C160.78 21.468 160.258 21.9 159.598 22.212C158.938 22.512 158.182 22.662 157.33 22.662Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <p class="footer-copyright">&copy; 2026 Open Music Networks</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://blog.openmusic.io/">Blog</a></li>
+            <li><a href="mailto:hello@openmusic.io">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
